@@ -1,0 +1,6 @@
+index.html var/www/html
+web var/www/html
+modules usr/lib/openwb
+runs usr/lib/openwb
+ladelog.sh usr/lib/openwb/scripts
+regel.sh usr/lib/openwb/scripts

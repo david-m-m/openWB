@@ -49,17 +49,17 @@
 # 	echo "...ok"
 # fi
 
-echo "check for i2c bus"
-if grep -Fxq "i2c-bcm2835" /etc/modules
-then
-	echo "...ok"
-else
-	echo "i2c-dev" >> /etc/modules
-	echo "i2c-bcm2708" >> /etc/modules
-	echo "snd-bcm2835" >> /etc/modules
-	echo "dtparam=i2c1=on" >> /etc/modules
-	echo "dtparam=i2c_arm=on" >> /etc/modules
-fi
+# echo "check for i2c bus"
+# if grep -Fxq "i2c-bcm2835" /etc/modules
+# then
+# 	echo "...ok"
+# else
+# 	echo "i2c-dev" >> /etc/modules
+# 	echo "i2c-bcm2708" >> /etc/modules
+# 	echo "snd-bcm2835" >> /etc/modules
+# 	echo "dtparam=i2c1=on" >> /etc/modules
+# 	echo "dtparam=i2c_arm=on" >> /etc/modules
+# fi
 
 # echo "check for i2c package"
 # if ! [ -x "$(command -v i2cdetect)" ]; then
