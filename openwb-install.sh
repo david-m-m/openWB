@@ -103,16 +103,16 @@ else
 fi
 
 
-echo "check for crontab"
-if grep -Fxq "@reboot /var/www/html/openWB/runs/atreboot.sh &" /var/spool/cron/crontabs/root
-then
-	echo "...ok"
-else
-	echo "@reboot /var/www/html/openWB/runs/atreboot.sh &" >> /tmp/tocrontab
-	crontab -l -u root | cat - /tmp/tocrontab | crontab -u root -
-	rm /tmp/tocrontab
-	echo "...added"
-fi
+# echo "check for crontab"
+# if grep -Fxq "@reboot /var/www/html/openWB/runs/atreboot.sh &" /var/spool/cron/crontabs/root
+# then
+# 	echo "...ok"
+# else
+# 	echo "@reboot /var/www/html/openWB/runs/atreboot.sh &" >> /tmp/tocrontab
+# 	crontab -l -u root | cat - /tmp/tocrontab | crontab -u root -
+# 	rm /tmp/tocrontab
+# 	echo "...added"
+# fi
 
 echo "check for MCP4725"
 if [ ! -d /home/pi/Adafruit_ _MCP4725 ]; then
@@ -135,18 +135,20 @@ fi
 # 	echo "...ok"
 # fi
 
+# Note: I think this can be removed
+# echo "disable cronjob logging"
+# if grep -Fxq "EXTRA_OPTS="-L 0"" /etc/default/cron
+# then
+# 	echo "...ok"
+# else
+# 	echo "EXTRA_OPTS="-L 0"" >> /etc/default/cron
+# fi
 
-echo "disable cronjob logging"
-if grep -Fxq "EXTRA_OPTS="-L 0"" /etc/default/cron
-then
-	echo "...ok"
-else
-	echo "EXTRA_OPTS="-L 0"" >> /etc/default/cron
-fi
 sudo /bin/su -c "echo 'upload_max_filesize = 30M' > /etc/php/7.0/apache2/conf.d/20-uploadlimit.ini"
 # sudo apt-get -qq install -y python-pip
 # sudo pip install  -U pymodbus
-echo "www-data ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/010_pi-nopasswd
+# we should get along without passwordless sudo...
+# echo "www-data ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/010_pi-nopasswd
 
 chmod 777 /var/www/html/openWB/openwb.conf
 chmod +x /var/www/html/openWB/modules/*                     
