@@ -901,6 +901,7 @@ $(function() {
 	<b><label for="ladeleistungmodul">Ladeleistungmodul:</label></b>
 	<select type="text" name="ladeleistungmodul" id="ladeleistungmodul">
 		<option <?php if($ladeleistungmodulold == "none\n") echo selected ?> value="none">Nicht vorhanden</option>
+		<option <?php if($ladeleistungmodulold == "simulatorll\n") echo selected ?> value="simulatorll">Simulator for LP1 - only for testing purposes!</option>
 		<option <?php if($ladeleistungmodulold == "sdm630modbusll\n") echo selected ?> value="sdm630modbusll">SDM 630 Modbus</option>
 		<option <?php if($ladeleistungmodulold == "smaemd_ll\n") echo selected ?> value="smaemd_ll">SMA Energy Meter</option>
 		<option <?php if($ladeleistungmodulold == "sdm120modbusll\n") echo selected ?> value="sdm120modbusll">SDM 120 Modbus</option>
@@ -1013,6 +1014,15 @@ Keine Konfiguration erforderlich.<br>
 <script>
 $(function() {
       if($('#ladeleistungmodul').val() == 'none') {
+		$('#llmnone').show(); 
+		$('#llmsdm').hide();
+		$('#llmpm3pm').hide();
+		$('#llswifi').hide();
+		$('#llsma, #sdm120div').hide();
+		$('#rs485lanlp1').hide();
+
+      } 
+      if($('#ladeleistungmodul').val() == 'simulatorll') {
 		$('#llmnone').show(); 
 		$('#llmsdm').hide();
 		$('#llmpm3pm').hide();
