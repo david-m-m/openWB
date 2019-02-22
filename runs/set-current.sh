@@ -64,6 +64,13 @@ function setChargingCurrentModbus () {
 	sudo python /var/www/html/openWB/runs/evsewritemodbus.py $modbusevsesource $modbusevseid $current
 }
 
+# function for setting the current - SIMULATOR
+# Parameters:
+# 1: current
+function setChargingCurrentSimulator () {
+	current=$1
+
+}
 
 # function for openwb slave kit
 function setChargingCurrentSlaveeth () {
@@ -153,6 +160,9 @@ function setChargingCurrent () {
 	fi
 	if [[ $evsecon == "masterethframer" ]]; then
 		setChargingCurrentMasterethframer $current 
+	fi
+	if [[ $evsecon == "simulator" ]]; then
+		setChargingCurrentSimulator $current
 	fi
 }
 

@@ -722,6 +722,7 @@ $zoepasswortold = str_replace( "'", "", $zoepasswortold);
         <select type="text" name="evsecon" id="evsecon">
 		<option <?php if($evseconold == "modbusevse\n") echo selected ?> value="modbusevse">Modbusevse</option>
 		<option <?php if($evseconold == "dac\n") echo selected ?> value="dac">DAC</option>
+		<option <?php if($evseconold == "simulator\n") echo selected ?> value="simulator">DAC</option>
 		<option <?php if($evseconold == "simpleevsewifi\n") echo selected ?> value="simpleevsewifi">SimpleEVSEWifi</option>
 		<option <?php if($evseconold == "goe\n") echo selected ?> value="goe">Go-e</option>
 		<option <?php if($evseconold == "masterethframer\n") echo selected ?> value="masterethframer">OpenWB Master</option>
