@@ -36,7 +36,7 @@
 	<link rel="stylesheet" type="text/css" href="css/cardio.css">
 </head>
 <body>
-<body onload="checkmodification()">
+<!-- <body onload="checkmodification()">
 <script type="text/javascript">
 function checkmodification(){
 	var r=confirm("Nach einmaliger Einrichtung ist in der Modulkonfiguration grundsätzlich keine weitere Einstellung nötig. Fortfahren?");
@@ -45,7 +45,7 @@ function checkmodification(){
 		  window.location.href = './index.php';
 	  }
 	}
-</script>
+</script> -->
 <?php
 
 
@@ -1004,9 +1004,8 @@ $zoelp2passwortold = str_replace( "'", "", $zoelp2passwortold);
 
 </div>
 
-
 <script>
-function display_lp1 () {
+function display_lp1() {
 	$('#evsecondac').hide(); 
 	$('#evseconmod').hide();
 	$('#evseconswifi').hide();
@@ -1043,10 +1042,12 @@ function display_lp1 () {
 
 $(function() {
 	display_lp1();
-	$('#evsecon').change( display_lp1() );
+	$('#evsecon').change(function(){
+		display_lp1();
+	})
 });
-
 </script>
+
 
 <br>
 <div id="llmodullp1">
@@ -1216,8 +1217,11 @@ function display_llmp1() {
 
 $(function() {
 	display_llmp1();
-	$('#ladeleistungmodul').change( display_llmp1() );
+	$('#ladeleistungmodul').change(function(){
+		display_llmp1();
+	});
 });
+</script>
 
 <br>
 
@@ -1436,7 +1440,9 @@ function display_socmodul() {
 
 $(function() {
 	display_socmodul();
-	$('#socmodul').change( display_socmodul() );
+	$('#socmodul').change( function(){
+		display_socmodul();
+	});
 });
 </script>
 
@@ -1631,7 +1637,9 @@ function display_lp2() {
 
 $(function() {
 	display_lp2();
-	$('#evsecons1').change( display_lp2() );
+	$('#evsecons1').change( function(){
+		display_lp2(); 
+	});
 });
 </script>
 
