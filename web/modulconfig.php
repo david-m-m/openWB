@@ -826,10 +826,6 @@ $wr_piko2_userold = str_replace( "'", "", $wr_piko2_userold);
 $wr_piko2_passold = str_replace( "'", "", $wr_piko2_passold);
 $wr_piko2_urlold = str_replace( "'", "", $wr_piko2_urlold);
 
-
-
-
-
 $solaredgepvipold = str_replace( "'", "", $solaredgepvipold);
 $solaredgeipold = str_replace( "'", "", $solaredgeipold);
 $solaredgewr2ipold = str_replace( "'", "", $solaredgewr2ipold);
@@ -842,9 +838,7 @@ $zoelp2passwortold = str_replace( "'", "", $zoelp2passwortold);
 
 ?>
 
-
-
-	<div class="container">
+<div class="container">
 
 
 <div class="row"><br>
@@ -1048,7 +1042,6 @@ $(function() {
 });
 </script>
 
-
 <br>
 <div id="llmodullp1">
 <div class="row">
@@ -1065,10 +1058,9 @@ $(function() {
 
 	</select>
 </div>
+
 <div id="llmnone">
-
 </div>
-
 
 <div id="llmpm3pm">
 		<div class="row bg-info">
@@ -1598,6 +1590,83 @@ $(function() {
 </div>
 
 </div>
+<!-- 
+<script>
+function display_lp2(){
+
+}
+$(function() {
+	$('#evsecondacs1').hide(); 
+	$('#evseconmbs1').hide();
+	$('#evseconswifis1').hide();
+	$('#llmodullp2').hide();
+	$('#evsecongoes1').hide();
+	$('#evsecoslaveeth').hide();
+	$('#evseconkebas1').hide();
+	$('#evseconnrgkicks1').hide();
+
+	if($('#evsecons1').val() == 'dac') {
+		$('#evsecondacs1').show(); 
+		$('#llmodullp2').show();
+	} 
+	if($('#evsecons1').val() == 'modbusevse') {
+		$('#evseconmbs1').show();
+		$('#llmodullp2').show();
+	} 
+	if($('#evsecons1').val() == 'simpleevsewifi') {
+		$('#evseconswifis1').show();
+	} 
+	if($('#evsecons1').val() == 'goe') {
+		$('#evsecongoes1').show();
+	} 
+	if($('#evsecons1').val() == 'slaveeth') {
+		$('#evsecoslaveeth').show();
+	} 
+	if($('#evsecons1').val() == 'keba') {
+		$('#evseconkebas1').show();
+	} 
+	if($('#evsecons1').val() == 'nrgkick') {
+   		$('#evseconnrgkicks1').show();
+	}
+
+	$('#evsecons1').change(function(){
+		$('#evsecondacs1').hide(); 
+		$('#evseconmbs1').hide();
+		$('#evseconswifis1').hide();
+		$('#llmodullp2').hide();
+		$('#evsecongoes1').hide();
+		$('#evsecoslaveeth').hide();
+		$('#evseconkebas1').hide();
+		$('#evseconnrgkicks1').hide();
+
+		if($('#evsecons1').val() == 'dac') {
+			$('#evsecondacs1').show(); 
+			$('#llmodullp2').show();
+		} 
+		if($('#evsecons1').val() == 'modbusevse') {
+			$('#evseconmbs1').show();
+			$('#llmodullp2').show();
+		} 
+		if($('#evsecons1').val() == 'simpleevsewifi') {
+			$('#evseconswifis1').show();
+		} 
+		if($('#evsecons1').val() == 'goe') {
+			$('#evsecongoes1').show();
+		} 
+		if($('#evsecons1').val() == 'slaveeth') {
+			$('#evsecoslaveeth').show();
+		} 
+		if($('#evsecons1').val() == 'keba') {
+			$('#evseconkebas1').show();
+		} 
+		if($('#evsecons1').val() == 'nrgkick') {
+			$('#evseconnrgkicks1').show();
+		}
+	});
+});
+</script>
+ -->
+
 
 <script>
 function display_lp2() {
@@ -1642,6 +1711,7 @@ $(function() {
 	});
 });
 </script>
+
 
 <div id="llmodullp2">
 	<div class="row"><br>
@@ -2005,7 +2075,9 @@ function display_socmodul1() {
 }
 $(function() {
 	display_socmodul1();
-	$('#socmodul1').change( display_socmodul1() );
+	$('#socmodul1').change( function(){
+		display_socmodul1();
+	});
 });
 </script>
 
@@ -2029,7 +2101,9 @@ function display_lastmanagement() {
 
 $(function() {
 	display_lastmanagement();
-	$('#lastmanagement').change( display_lastmanagement() );
+	$('#lastmanagement').change( function(){
+		display_lastmanagement();
+	 } );
 });
 </script>
 
@@ -2139,7 +2213,7 @@ $(function() {
 </div>
 
 <script>
-function display_lp2 () {
+function display_lp3 () {
 	$('#evsecondacs2').hide(); 
 	$('#evseconmbs2').hide();
 	$('#evseconswifis2').hide();
@@ -2163,8 +2237,10 @@ function display_lp2 () {
 }
 
 $(function() {
-	display_lp2();
-	$('#evsecons2').change( display_lp2() );
+	display_lp3();
+	$('#evsecons2').change( function(){
+		display_lp3(); 
+	});
 });
 </script>
 
@@ -2296,7 +2372,9 @@ function display_llmp3 () {
 }
 $(function() {
 	display_llmp3 ();
-	$('#ladeleistungss2modul').change( display_llmp3() );
+	$('#ladeleistungss2modul').change( function(){
+		display_llmp3();
+	});
 });
 </script>
 
@@ -2315,7 +2393,9 @@ function display_lastmanagement2() {
 }
 $(function() {
 	display_lastmanagement2();
-	$('#lastmanagements2').change( display_lastmanagement2() );
+	$('#lastmanagements2').change( function() {
+		display_lastmanagement2();
+	});
 });
 </script>
 
@@ -2670,22 +2750,19 @@ EVU L1, LP1 L1, LP2 L2<br>EVU L2, LP1 L2, LP2 L3<br> EVU L3, LP1 L3, LP2 L1<br>
 
 <script>
 $(function() {
-      if($('#evuglaettungakt').val() == '0') {
+	if($('#evuglaettungakt').val() == '0') {
 		$('#evuglaettungdiv').hide();
-      } else {
+	} else {
 		$('#evuglaettungdiv').show();
-
-
-      }
+	}
 
 	$('#evuglaettungakt').change(function(){
-	      if($('#evuglaettungakt').val() == '0') {
-		$('#evuglaettungdiv').hide();
-      } else {
-		$('#evuglaettungdiv').show();
-
-
-      } 	    });
+		if($('#evuglaettungakt').val() == '0') {
+			$('#evuglaettungdiv').hide();
+		} else {
+			$('#evuglaettungdiv').show();
+		} 	    
+	});
 });
 </script>
 
@@ -2774,7 +2851,9 @@ function display_wattbezugmodul() {
 }
 $(function() {
 	display_wattbezugmodul();
-  $('#wattbezugmodul').change( display_wattbezugmodul() );
+  	$('#wattbezugmodul').change( function(){
+		display_wattbezugmodul();
+  	});
 });
 </script>
 
@@ -2800,11 +2879,9 @@ $(function() {
 		<option <?php if($pvwattmodulold == "wr_solarlog\n") echo selected ?> value="wr_solarlog">SolarLog</option>
 		<option <?php if($pvwattmodulold == "wr_kostalpikovar2\n") echo selected ?> value="wr_kostalpikovar2">Kostal Piko alt</option>
 		<option <?php if($pvwattmodulold == "wr_powerwall\n") echo selected ?> value="wr_powerwall">Tesla Powerwall</option>
-
-
-
 </select>
 </div>
+
 <div class="row">
 	<br><br>
 </div>
@@ -2838,9 +2915,7 @@ $(function() {
 	<input id="kostalplenticorebatt" name="kostalplenticorebatt" value="1" type="checkbox" <?php if ( $kostalplenticorebattold == 1){ echo "checked"; } ?> >
 	<label for="kostalplenticorebatt">Batterie am Kostal angeschlossen</label><br>
 -->
-
 </div>
-
 
 <div id="pvsmartme">
 	<div class="row" style="background-color:#befebe">
@@ -2864,8 +2939,8 @@ $(function() {
 	<div class="row" style="background-color:#befebe">
 	Smartme Url<br>
 	</div>
-
 </div>
+
 <div id="pvpiko2">
 	<div class="row" style="background-color:#befebe">
 		<b><label for="wr_piko2_user">Benutzername</label></b>
@@ -3030,8 +3105,6 @@ $(function() {
 	</div>
 </div>
 
-
-
 <div id="pvsdmwr">
 	<div class="row" style="background-color:#BEFEBE">
 		<b><label for="sdm630modbuswrsource">SDM Modbus Wechselrichterleistung Source:</label></b>
@@ -3086,9 +3159,8 @@ $(function() {
 	<div class="row" style="background-color:#BEFEBE">
 		Gültige Werte vollständige URL. Die abgerufene Url muss eine reine Zahl zurückgeben. Der Wert muss in WattStunden sein. Der Wert dient rein dem Logging. Wird dieses nicht genutzt oder ist der Wert nicht verfügbar bitte auf "none" setzen, dann wird die Abfrage nicht ausgeführt.<br>
 	</div>
-
-
 </div>
+
 <div id="pvsma">
 	<div class="row" style="background-color:#BEFEBE">
 		<b><label for="smaemdpvid">Seriennummer des SMA Energy Meter</label></b>
@@ -3171,10 +3243,11 @@ function display_pvwattmodul() {
 }
 $(function() {
 	display_pvwattmodul();
-	$('#pvwattmodul').change( display_pvwattmodul() );
+	$('#pvwattmodul').change( function(){
+		display_pvwattmodul();
+	} );
 });
 </script>
-
 
 <div class="row"><hr>
 	<h3> Speicher Modul </h3>
@@ -3404,7 +3477,9 @@ function display_speichermodul() {
 }
 $(function() {
 display_speichermodul();
-$('#speichermodul').change( display_speichermodul() );
+	$('#speichermodul').change( function(){
+		display_speichermodul();
+	});
 });
 </script>
 
